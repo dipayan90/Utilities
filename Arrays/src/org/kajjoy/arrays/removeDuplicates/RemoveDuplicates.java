@@ -14,5 +14,24 @@ public class RemoveDuplicates {
 		}
 		return builder.toString();
 	}
-
+	
+	protected static String removeWithoutSpace(String str){
+		
+		char[] charArray = str.toCharArray();
+		int len = charArray.length;
+		for(int i=0;i<len;i++){
+			for(int j=i+1;j<len;j++){
+				if(charArray[i]==charArray[j]){
+					int temp = j;
+					for(int index = j+1;index<len;index++){
+						charArray[temp] = charArray[index];
+						temp++;
+					}
+					j--;
+					len --;
+				}
+			}
+		}
+		return new String(charArray);
+	}
 }

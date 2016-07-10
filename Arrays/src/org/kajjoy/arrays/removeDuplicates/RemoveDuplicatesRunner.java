@@ -22,6 +22,8 @@ public class RemoveDuplicatesRunner implements Runner {
 		
 		if(choice == 1){
 			System.out.println( RemoveDuplicates.remove(str));
+		}else if(choice == 2){
+			System.out.println(RemoveDuplicates.removeWithoutSpace(str));
 		}
 	}
 
