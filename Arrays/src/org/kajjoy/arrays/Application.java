@@ -12,7 +12,8 @@ public class Application {
 		for(String arg: args){
 			System.out.println(arg + "\t");
 		}
-		runModules("checkAnagrams").run();
+		
+		runModules("removeDuplicates").run();
 	}
 	
 	

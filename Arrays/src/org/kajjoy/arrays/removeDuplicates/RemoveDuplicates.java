@@ -1,5 +1,9 @@
 package org.kajjoy.arrays.removeDuplicates;
 
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 public class RemoveDuplicates {
 	
 	protected static String remove(String str){
@@ -33,5 +37,17 @@ public class RemoveDuplicates {
 			}
 		}
 		return new String(charArray);
+	}
+	
+	protected static String removeUsingSets(String str){
+		Set<Character> uniqueSet = new LinkedHashSet<>();
+		for(char c : str.toCharArray()){
+			uniqueSet.add(c);
+		}
+		StringBuilder builder = new StringBuilder();
+		for(char c: uniqueSet){
+			builder.append(c);
+		}
+		return builder.toString();
 	}
 }

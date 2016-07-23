@@ -10,7 +10,7 @@ public class RemoveDuplicatesRunner implements Runner {
 	public void run() {
 		// TODO Auto-generated method stub
 		System.out.println("Please enter option: \n");
-		System.out.println("1: with space \t 2: without space");
+		System.out.println("1: with space \t 2: without space \t 3: using sets");
 		Scanner choiceInput = new Scanner(System.in);
 		int choice = choiceInput.nextInt();
 		
@@ -24,6 +24,8 @@ public class RemoveDuplicatesRunner implements Runner {
 			System.out.println( RemoveDuplicates.remove(str));
 		}else if(choice == 2){
 			System.out.println(RemoveDuplicates.removeWithoutSpace(str));
+		}else if(choice == 3){
+			System.out.println(RemoveDuplicates.removeUsingSets(str));
 		}
 	}
 
