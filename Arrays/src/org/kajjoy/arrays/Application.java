@@ -2,7 +2,9 @@ package org.kajjoy.arrays;
 
 import org.kajjoy.arrays.anagramChecker.AnagramCheckerRunner;
 import org.kajjoy.arrays.detectDuplicates.DetectDuplicatesRunner;
+import org.kajjoy.arrays.detectDuplicates.NonRepeatedCharacterDetectorRunner;
 import org.kajjoy.arrays.removeDuplicates.RemoveDuplicatesRunner;
+import org.kajjoy.arrays.sumchecker.SumCheckerRunner;
 
 public class Application {
 
@@ -13,7 +15,7 @@ public class Application {
 			System.out.println(arg + "\t");
 		}
 		
-		runModules("removeDuplicates").run();
+		runModules("sumchecker").run();
 	}
 	
 	
@@ -30,6 +32,14 @@ public class Application {
 			case "checkAnagrams":{
 				System.out.println("Running the program to detect anagrams");
 				return new AnagramCheckerRunner();
+			}
+			case "nonRepeatedChars":{
+				System.out.println("Running the program to return the nth non repeated character in a String \n");
+				return new NonRepeatedCharacterDetectorRunner();
+			}
+			case "sumchecker":{
+				System.out.println("Running program to detect first consecutive set of numbers that add up to a given target number \n");
+				return new SumCheckerRunner();
 			}
 		}
 		return () -> System.out.println("Please Specify a runner to run program");
