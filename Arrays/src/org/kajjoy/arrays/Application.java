@@ -1,6 +1,7 @@
 package org.kajjoy.arrays;
 
 import org.kajjoy.arrays.anagramChecker.AnagramCheckerRunner;
+import org.kajjoy.arrays.bitCount.BitCountRunner;
 import org.kajjoy.arrays.detectDuplicates.DetectDuplicatesRunner;
 import org.kajjoy.arrays.detectDuplicates.NonRepeatedCharacterDetectorRunner;
 import org.kajjoy.arrays.removeDuplicates.RemoveDuplicatesRunner;
@@ -15,7 +16,7 @@ public class Application {
 			System.out.println(arg + "\t");
 		}
 		
-		runModules("sumchecker").run();
+		runModules("bitCount").run();
 	}
 	
 	
@@ -40,6 +41,10 @@ public class Application {
 			case "sumchecker":{
 				System.out.println("Running program to detect first consecutive set of numbers that add up to a given target number \n");
 				return new SumCheckerRunner();
+			}
+			case "bitCount":{
+				System.out.println("Running program to find maximum count of set bits in an integer with just one swap \n");
+				return new BitCountRunner();
 			}
 		}
 		return () -> System.out.println("Please Specify a runner to run program");
