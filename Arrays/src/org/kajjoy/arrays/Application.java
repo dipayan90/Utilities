@@ -5,6 +5,7 @@ import org.kajjoy.arrays.bitCount.BitCountRunner;
 import org.kajjoy.arrays.detectDuplicates.DetectDuplicatesRunner;
 import org.kajjoy.arrays.detectDuplicates.NonRepeatedCharacterDetectorRunner;
 import org.kajjoy.arrays.removeDuplicates.RemoveDuplicatesRunner;
+import org.kajjoy.arrays.stringReverse.StringReverseRunner;
 import org.kajjoy.arrays.sumchecker.SumCheckerRunner;
 
 public class Application {
@@ -16,7 +17,7 @@ public class Application {
 			System.out.println(arg + "\t");
 		}
 		
-		runModules("bitCount").run();
+		runModules("stringReverse").run();
 	}
 	
 	
@@ -46,6 +47,11 @@ public class Application {
 				System.out.println("Running program to find maximum count of set bits in an integer with just one swap \n");
 				return new BitCountRunner();
 			}
+			case "stringReverse":{
+				System.out.println("Running program to do string reverse \n");
+				return new StringReverseRunner();
+			}
+			
 		}
 		return () -> System.out.println("Please Specify a runner to run program");
 	}
