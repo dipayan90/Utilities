@@ -30,30 +30,28 @@ public class Tree {
 	}
 	
 	public void insert(int data){
-		
 		Node newNode = new Node();
 		newNode.setData(data);
-		
 		if(root == null){
 			root = newNode;
 		}else{
 			Node current = root;
-			Node parent;
+			Node parent = null;
 			while(true){
-				 parent = current;
-				if(data > current.getData()){
-					current = current.getRightChild();
-					if(current == null){
-						parent.setRightChild(newNode);
-						return;
-					}
-				}else if(data<current.getData()){
+				parent = current;
+				if(data < current.getData()){
 					current = current.getLeftChild();
 					if(current == null){
 						parent.setLeftChild(newNode);
 						return;
 					}
-				}	
+				}else{
+					current = current.getRightChild();
+					if(current == null){
+						parent.setRightChild(newNode);
+						return;
+					}
+				}
 			}
 		}
 	}
@@ -105,6 +103,16 @@ public class Tree {
 		}
 		return findMinRecursive(current.getLeftChild());
 	}
+
+
+    public int findMax(Node current){
+        if(current == null){
+            return -1;
+        }else if(current.getRightChild() == null){
+            return current.getData();
+        }
+        return findMax(current.getRightChild());
+    }
 	
 	public void inorder(Node current){
 		if(current == null){

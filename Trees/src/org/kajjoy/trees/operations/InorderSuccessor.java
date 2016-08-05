@@ -5,17 +5,22 @@ import org.kajjoy.trees.Node;
 public class InorderSuccessor {
 	
 	private Node root;
+
+	public void setRoot(Node rt){
+		this.root = rt;
+	}
+
+	public Node getRoot(){
+		return this.root;
+	}
 	
 	public Node inorderSuccesor(Node currentNode){
 		
 		if(currentNode == null){
 			return null;
 		}
-		
-		if(currentNode.getLeftChild() != null){
-			// if left child exists -> left child is next successor
-			return currentNode.getLeftChild();
-		}else if(currentNode.getRightChild() != null){
+
+		if(currentNode.getRightChild() != null){
 			// If left doesn't exist and only right exists,
 			//then leftmost node on right subtree is the next inorder 
 			//succesor
@@ -30,6 +35,7 @@ public class InorderSuccessor {
 			// More info: https://www.youtube.com/watch?v=5cPbNCrdotA
 			Node successor = null;
 			Node rootElem = root;
+			// loop untill you get the element . Store the last element after which you went left . Thats the inorder succesor.
 			while(rootElem.getData() != currentNode.getData()){
 				if(currentNode.getData() < rootElem.getData()){
 					successor = rootElem;
