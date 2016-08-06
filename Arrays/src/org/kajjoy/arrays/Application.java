@@ -5,6 +5,7 @@ import org.kajjoy.arrays.bitCount.BitCountRunner;
 import org.kajjoy.arrays.detectDuplicates.DetectDuplicatesRunner;
 import org.kajjoy.arrays.detectDuplicates.NonRepeatedCharacterDetectorRunner;
 import org.kajjoy.arrays.isomorphicStrings.IsomorphicStringRunner;
+import org.kajjoy.arrays.nthLargest.NthLargestRunner;
 import org.kajjoy.arrays.removeDuplicates.RemoveDuplicatesRunner;
 import org.kajjoy.arrays.stringReverse.StringReverseRunner;
 import org.kajjoy.arrays.sumchecker.SumCheckerRunner;
@@ -18,7 +19,7 @@ public class Application {
 			System.out.println(arg + "\t");
 		}
 		
-		runModules("isomorphicStrings").run();
+		runModules("nthLargest").run();
 	}
 	
 	
@@ -55,6 +56,10 @@ public class Application {
 			case "isomorphicStrings" : {
 				System.out.println("Running program to check if 2 strings are isomorphic \n");
 				return new IsomorphicStringRunner();
+			}
+			case "nthLargest":{
+				System.out.println("Running program to find kth largest element in the array \n");
+				return new NthLargestRunner();
 			}
 			
 		}
