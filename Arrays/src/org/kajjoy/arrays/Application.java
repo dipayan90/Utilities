@@ -4,6 +4,7 @@ import org.kajjoy.arrays.anagramChecker.AnagramCheckerRunner;
 import org.kajjoy.arrays.bitCount.BitCountRunner;
 import org.kajjoy.arrays.detectDuplicates.DetectDuplicatesRunner;
 import org.kajjoy.arrays.detectDuplicates.NonRepeatedCharacterDetectorRunner;
+import org.kajjoy.arrays.isomorphicStrings.IsomorphicStringRunner;
 import org.kajjoy.arrays.removeDuplicates.RemoveDuplicatesRunner;
 import org.kajjoy.arrays.stringReverse.StringReverseRunner;
 import org.kajjoy.arrays.sumchecker.SumCheckerRunner;
@@ -17,7 +18,7 @@ public class Application {
 			System.out.println(arg + "\t");
 		}
 		
-		runModules("stringReverse").run();
+		runModules("isomorphicStrings").run();
 	}
 	
 	
@@ -50,6 +51,10 @@ public class Application {
 			case "stringReverse":{
 				System.out.println("Running program to do string reverse \n");
 				return new StringReverseRunner();
+			}
+			case "isomorphicStrings" : {
+				System.out.println("Running program to check if 2 strings are isomorphic \n");
+				return new IsomorphicStringRunner();
 			}
 			
 		}
