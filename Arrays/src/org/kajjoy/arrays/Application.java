@@ -5,6 +5,7 @@ import org.kajjoy.arrays.bitCount.BitCountRunner;
 import org.kajjoy.arrays.detectDuplicates.DetectDuplicatesRunner;
 import org.kajjoy.arrays.detectDuplicates.NonRepeatedCharacterDetectorRunner;
 import org.kajjoy.arrays.isomorphicStrings.IsomorphicStringRunner;
+import org.kajjoy.arrays.mergeIntervals.MergeIntervalsRunner;
 import org.kajjoy.arrays.nthLargest.NthLargestRunner;
 import org.kajjoy.arrays.removeDuplicates.RemoveDuplicatesRunner;
 import org.kajjoy.arrays.stringReverse.StringReverseRunner;
@@ -19,7 +20,7 @@ public class Application {
 			System.out.println(arg + "\t");
 		}
 		
-		runModules("nthLargest").run();
+		runModules("mergeIntervals").run();
 	}
 	
 	
@@ -60,6 +61,10 @@ public class Application {
 			case "nthLargest":{
 				System.out.println("Running program to find kth largest element in the array \n");
 				return new NthLargestRunner();
+			}
+			case "mergeIntervals":{
+				System.out.println("Running program to merge overlapping intervals \n");
+				return new MergeIntervalsRunner();
 			}
 			
 		}

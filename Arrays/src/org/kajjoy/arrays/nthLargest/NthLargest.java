@@ -1,24 +1,21 @@
 package org.kajjoy.arrays.nthLargest;
 
+import java.util.PriorityQueue;
+
 /**
  * Created by chattod on 8/5/16.
  */
 public class NthLargest {
 
-    protected static int find(Integer[] numbers,int k){
-        int[] tracker = new int[k];
-        int index = 0;
-        while(index < numbers.length){
-            int secIndex = 0;
-            while(secIndex < k){
-                if(numbers[index] > tracker[secIndex]){
-                    tracker[secIndex] = numbers[index];
-                    break;
-                }
-                secIndex++;
-            }
-            index++;
-        }
-        return tracker[k-1];
+	//Easiest Solution 
+	   protected static int find(Integer[] numbers,int k){
+	    	PriorityQueue<Integer> q = new PriorityQueue<>(k);
+	    	for(int num : numbers){
+	    		q.offer(num);
+	    		if(q.size() > k){
+	    			q.poll();
+	    		}
+	    	}
+	    	return q.peek();
     }
 }
