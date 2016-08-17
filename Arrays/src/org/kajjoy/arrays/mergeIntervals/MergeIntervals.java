@@ -30,6 +30,9 @@ public class MergeIntervals {
 			return null;
 		}
 		if(b[0] < a[1]){
+			if(b[1] < a[1]){
+				return a;
+			}
 			return new Integer[]{ a[0], b[1] };
 		}else{
 			System.out.println("Arrays cannot be merged");
