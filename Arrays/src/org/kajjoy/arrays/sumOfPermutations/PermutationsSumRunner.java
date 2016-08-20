@@ -13,6 +13,7 @@ public class PermutationsSumRunner implements Runner {
         System.out.println("Please enter the number n for which you want to find sum of all possible permutations: \n");
         Scanner scn = new Scanner(System.in);
         Integer number = scn.nextInt();
-        PermutationsSum.printPermutations(number);
+        PermutationsSum.printDigits(number);
+        System.out.println(PermutationsSum.sum(number));
     }
 }
