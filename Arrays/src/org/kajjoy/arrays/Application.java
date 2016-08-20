@@ -9,6 +9,7 @@ import org.kajjoy.arrays.mergeIntervals.MergeIntervalsRunner;
 import org.kajjoy.arrays.nthLargest.NthLargestRunner;
 import org.kajjoy.arrays.removeDuplicates.RemoveDuplicatesRunner;
 import org.kajjoy.arrays.stringReverse.StringReverseRunner;
+import org.kajjoy.arrays.sumOfPermutations.PermutationsSumRunner;
 import org.kajjoy.arrays.sumchecker.SumCheckerRunner;
 
 public class Application {
@@ -20,7 +21,7 @@ public class Application {
 			System.out.println(arg + "\t");
 		}
 		
-		runModules("mergeIntervals").run();
+		runModules("sumPermutations").run();
 	}
 	
 	
@@ -65,6 +66,10 @@ public class Application {
 			case "mergeIntervals":{
 				System.out.println("Running program to merge overlapping intervals \n");
 				return new MergeIntervalsRunner();
+			}
+			case "sumPermutations":{
+				System.out.println("Running program to print sum of all possible permutations for input number \n");
+				return new PermutationsSumRunner();
 			}
 			
 		}
