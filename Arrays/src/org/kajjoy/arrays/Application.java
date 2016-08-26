@@ -6,9 +6,11 @@ import org.kajjoy.arrays.detectDuplicates.DetectDuplicatesRunner;
 import org.kajjoy.arrays.detectDuplicates.NonRepeatedCharacterDetectorRunner;
 import org.kajjoy.arrays.isomorphicStrings.IsomorphicStringRunner;
 import org.kajjoy.arrays.mergeIntervals.MergeIntervalsRunner;
+import org.kajjoy.arrays.mergeSortedArrays.MergeSortedArraysRunner;
 import org.kajjoy.arrays.nthLargest.NthLargestRunner;
 import org.kajjoy.arrays.removeDuplicates.RemoveDuplicatesRunner;
 import org.kajjoy.arrays.stringReverse.StringReverseRunner;
+import org.kajjoy.arrays.sum2.Sum2Runner;
 import org.kajjoy.arrays.sumOfPermutations.PermutationsSumRunner;
 import org.kajjoy.arrays.sumchecker.SumCheckerRunner;
 
@@ -21,7 +23,7 @@ public class Application {
 			System.out.println(arg + "\t");
 		}
 		
-		runModules("sumPermutations").run();
+		runModules("mergeArrays").run();
 	}
 	
 	
@@ -71,6 +73,14 @@ public class Application {
 				System.out.println("Running program to print sum of all possible permutations for input number \n");
 				return new PermutationsSumRunner();
 			}
+			case "sum2":{
+				System.out.println("Running program to print sum of 2 numbers in an array thats nearest to a given target number \n");
+				return new Sum2Runner();
+			}
+            case "mergeArrays":{
+                System.out.println("Running program to merge two arrays \n");
+                return new MergeSortedArraysRunner();
+            }
 			
 		}
 		return () -> System.out.println("Please Specify a runner to run program");
