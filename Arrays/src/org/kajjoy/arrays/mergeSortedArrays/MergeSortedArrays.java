@@ -19,16 +19,16 @@ public class MergeSortedArrays {
         Integer[] result = new Integer[totallen];
         int final_pointer = 0,first_pointer = 0,second_pointer = 0;
         while(final_pointer < totallen){
-            if(arr1[first_pointer] < arr2[second_pointer]){
-                result[final_pointer++] = arr1[first_pointer++];
-            }else if(arr1[first_pointer] > arr2[second_pointer]){
-                result[final_pointer++] = arr2[second_pointer++];
-            }
             if(first_pointer > arr1.length-1){
                 result[final_pointer++] = arr2[second_pointer++];
             }else if(second_pointer > arr2.length-1){
                 result[final_pointer++] = arr1[first_pointer++];
+            }else if(arr1[first_pointer] < arr2[second_pointer]){
+                result[final_pointer++] = arr1[first_pointer++];
+            }else if(arr1[first_pointer] > arr2[second_pointer]){
+                result[final_pointer++] = arr2[second_pointer++];
             }
+
         }
         return result;
     }
