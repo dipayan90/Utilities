@@ -1,6 +1,7 @@
 package org.kajjoy.arrays;
 
 import org.kajjoy.arrays.anagramChecker.AnagramCheckerRunner;
+import org.kajjoy.arrays.binarySearch.BinarySearchRunner;
 import org.kajjoy.arrays.bitCount.BitCountRunner;
 import org.kajjoy.arrays.detectDuplicates.DetectDuplicatesRunner;
 import org.kajjoy.arrays.detectDuplicates.NonRepeatedCharacterDetectorRunner;
@@ -23,7 +24,7 @@ public class Application {
 			System.out.println(arg + "\t");
 		}
 		
-		runModules("mergeArrays").run();
+		runModules("binarySearch").run();
 	}
 	
 	
@@ -81,6 +82,10 @@ public class Application {
                 System.out.println("Running program to merge two arrays \n");
                 return new MergeSortedArraysRunner();
             }
+			case "binarySearch":{
+				System.out.println("Running binary search program");
+				return new BinarySearchRunner();
+			}
 			
 		}
 		return () -> System.out.println("Please Specify a runner to run program");
