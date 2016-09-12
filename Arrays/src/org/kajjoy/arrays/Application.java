@@ -9,6 +9,7 @@ import org.kajjoy.arrays.isomorphicStrings.IsomorphicStringRunner;
 import org.kajjoy.arrays.mergeIntervals.MergeIntervalsRunner;
 import org.kajjoy.arrays.mergeSortedArrays.MergeSortedArraysRunner;
 import org.kajjoy.arrays.nthLargest.NthLargestRunner;
+import org.kajjoy.arrays.paranthesisChecker.ParanthesisCheckerRunner;
 import org.kajjoy.arrays.removeDuplicates.RemoveDuplicatesRunner;
 import org.kajjoy.arrays.stringReverse.StringReverseRunner;
 import org.kajjoy.arrays.sum2.Sum2Runner;
@@ -24,7 +25,7 @@ public class Application {
 			System.out.println(arg + "\t");
 		}
 		
-		runModules("binarySearch").run();
+		runModules("paranthesisChecker").run();
 	}
 	
 	
@@ -85,6 +86,10 @@ public class Application {
 			case "binarySearch":{
 				System.out.println("Running binary search program");
 				return new BinarySearchRunner();
+			}
+			case "paranthesisChecker": {
+				System.out.println("Running paranthesis checker program");
+				return new ParanthesisCheckerRunner();
 			}
 			
 		}
