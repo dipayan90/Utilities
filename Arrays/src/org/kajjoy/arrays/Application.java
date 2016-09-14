@@ -8,6 +8,7 @@ import org.kajjoy.arrays.detectDuplicates.NonRepeatedCharacterDetectorRunner;
 import org.kajjoy.arrays.isomorphicStrings.IsomorphicStringRunner;
 import org.kajjoy.arrays.mergeIntervals.MergeIntervalsRunner;
 import org.kajjoy.arrays.mergeSortedArrays.MergeSortedArraysRunner;
+import org.kajjoy.arrays.minimumSubArraySum.MinimumSubArraySumRunner;
 import org.kajjoy.arrays.nthLargest.NthLargestRunner;
 import org.kajjoy.arrays.paranthesisChecker.ParanthesisCheckerRunner;
 import org.kajjoy.arrays.removeDuplicates.RemoveDuplicatesRunner;
@@ -25,7 +26,7 @@ public class Application {
 			System.out.println(arg + "\t");
 		}
 		
-		runModules("paranthesisChecker").run();
+		runModules("minimumSubArraySum").run();
 	}
 	
 	
@@ -90,6 +91,10 @@ public class Application {
 			case "paranthesisChecker": {
 				System.out.println("Running paranthesis checker program");
 				return new ParanthesisCheckerRunner();
+			}
+			case "minimumSubArraySum" : {
+				System.out.println("Running minimum sub array sum program");
+				return new MinimumSubArraySumRunner();
 			}
 			
 		}

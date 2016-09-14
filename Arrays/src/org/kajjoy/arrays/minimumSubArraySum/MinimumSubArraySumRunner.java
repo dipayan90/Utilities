@@ -1,5 +1,9 @@
 package org.kajjoy.arrays.minimumSubArraySum;
 
+import org.kajjoy.arrays.Runner;
+
+import java.util.Scanner;
+
 /**
  * Created by dipayan on 9/11/16.
  *
@@ -7,6 +11,37 @@ package org.kajjoy.arrays.minimumSubArraySum;
 
  For example, given the array [2,3,1,2,4,3] and s = 7, the subarray [4,3] has the minimal length of 2 under the problem constraint.
  */
-public class MinimumSubArraySumRunner {
-    // TODO: Implementation to be completed
+public class MinimumSubArraySumRunner implements Runner {
+
+    @Override
+    public void run() {
+        System.out.println("Please enter the integer array: ");
+        Scanner scn = new Scanner(System.in);
+        String arrayElements = scn.next();
+        Integer[] array = stringToArray(arrayElements);
+        System.out.println("The entered array is: ");
+        print(array);
+        System.out.println("Please enter the target value: ");
+        Scanner scn1 = new Scanner(System.in);
+        int target = scn1.nextInt();
+        Integer[] resultingArr =  MinimumSubArraySum.calculate(array,target);
+        System.out.println("The resulting minumum sum sub array is: ");
+        print(resultingArr);
+    }
+
+    private Integer[] stringToArray(String s){
+        String[] segs = s.split(",");
+        Integer[] arr = new Integer[segs.length];
+        int index = 0;
+        for(String seg: segs){
+            arr[index++] = Integer.parseInt(seg);
+        }
+        return arr;
+    }
+
+    private void print(Integer[] arr){
+        for(int i=0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
+    }
 }
