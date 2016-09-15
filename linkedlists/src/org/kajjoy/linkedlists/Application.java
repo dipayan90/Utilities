@@ -1,5 +1,8 @@
 package org.kajjoy.linkedlists;
 
+import org.kajjoy.linkedlists.queues.QueueRunner;
+import org.kajjoy.linkedlists.stacks.StackRunner;
+
 /**
  * Created by dipayan on 9/14/16.
  */
@@ -11,17 +14,20 @@ public class Application {
             System.out.println(arg + "\t");
         }
 
-        runModules("minimumSubArraySum").run();
+        runModules("queue").run();
     }
 
 
     private static Runner runModules(String module){
         switch(module){
-            case "detectDuplicates":{
-                System.out.println("Running the program to detect duplicates");
-              //  return new DetectDuplicatesRunner();
+            case "stack":{
+                System.out.println("Running the program to do stack operations");
+                return new StackRunner();
             }
-
+            case "queue":{
+                System.out.println("Running the program to do queue operations");
+                return new QueueRunner();
+            }
 
         }
         return () -> System.out.println("Please Specify a runner to run program");
