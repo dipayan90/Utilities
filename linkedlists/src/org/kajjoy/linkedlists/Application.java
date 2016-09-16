@@ -2,6 +2,7 @@ package org.kajjoy.linkedlists;
 
 import org.kajjoy.linkedlists.queues.QueueRunner;
 import org.kajjoy.linkedlists.stacks.StackRunner;
+import org.kajjoy.linkedlists.sum.SumRunner;
 
 /**
  * Created by dipayan on 9/14/16.
@@ -14,7 +15,7 @@ public class Application {
             System.out.println(arg + "\t");
         }
 
-        runModules("queue").run();
+        runModules("sum").run();
     }
 
 
@@ -28,7 +29,10 @@ public class Application {
                 System.out.println("Running the program to do queue operations");
                 return new QueueRunner();
             }
-
+            case "sum":{
+                System.out.println("Running the program to sum 2 linked lists");
+                return new SumRunner();
+            }
         }
         return () -> System.out.println("Please Specify a runner to run program");
     }
