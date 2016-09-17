@@ -1,5 +1,6 @@
 package org.kajjoy.linkedlists;
 
+import org.kajjoy.linkedlists.cycleDetector.CycleDetectorRunner;
 import org.kajjoy.linkedlists.queues.QueueRunner;
 import org.kajjoy.linkedlists.reorder.ReorderRunner;
 import org.kajjoy.linkedlists.stacks.StackRunner;
@@ -16,7 +17,7 @@ public class Application {
             System.out.println(arg + "\t");
         }
 
-        runModules("reorder").run();
+        runModules("cyclicDetector").run();
     }
 
 
@@ -37,6 +38,10 @@ public class Application {
             case "reorder":{
                 System.out.println("Running the program to reorder linked lists");
                 return new ReorderRunner();
+            }
+            case "cyclicDetector":{
+                System.out.println("Running the program to detect if a linkedlist is cyclic");
+                return new CycleDetectorRunner();
             }
         }
         return () -> System.out.println("Please Specify a runner to run program");
