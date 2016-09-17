@@ -1,6 +1,7 @@
 package org.kajjoy.linkedlists;
 
 import org.kajjoy.linkedlists.queues.QueueRunner;
+import org.kajjoy.linkedlists.reorder.ReorderRunner;
 import org.kajjoy.linkedlists.stacks.StackRunner;
 import org.kajjoy.linkedlists.sum.SumRunner;
 
@@ -15,7 +16,7 @@ public class Application {
             System.out.println(arg + "\t");
         }
 
-        runModules("sum").run();
+        runModules("reorder").run();
     }
 
 
@@ -32,6 +33,10 @@ public class Application {
             case "sum":{
                 System.out.println("Running the program to sum 2 linked lists");
                 return new SumRunner();
+            }
+            case "reorder":{
+                System.out.println("Running the program to reorder linked lists");
+                return new ReorderRunner();
             }
         }
         return () -> System.out.println("Please Specify a runner to run program");
