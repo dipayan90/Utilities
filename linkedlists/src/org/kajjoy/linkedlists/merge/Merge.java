@@ -19,6 +19,7 @@ public class Merge {
                        current.setNext(newNode1);
                        current = newNode1;
                    }
+                   node1 = node1.getNext();
                }else{
                    Node newNode2 = new Node(node2.getData());
                    if(start == null){
@@ -28,28 +29,31 @@ public class Merge {
                        current.setNext(newNode2);
                        current = newNode2;
                    }
+                   node2 = node2.getNext();
                }
-            }
-
-            while(node1 != null){
-                Node newNode = new Node(node1.getData());
-                if(start == null){
-                    start = newNode;
-                    current = start;
-                }else{
-                    current.setNext(newNode);
-                    current = newNode;
+            }else if(node1 != null && node2 == null){
+                while(node1 != null){
+                    Node newNode = new Node(node1.getData());
+                    if(start == null){
+                        start = newNode;
+                        current = start;
+                    }else{
+                        current.setNext(newNode);
+                        current = newNode;
+                    }
+                    node1 = node1.getNext();
                 }
-            }
-
-            while(node2 != null){
-                Node newNode = new Node(node2.getData());
-                if(start == null){
-                    start = newNode;
-                    current = start;
-                }else{
-                    current.setNext(newNode);
-                    current = newNode;
+            }else{
+                while(node2 != null){
+                    Node newNode = new Node(node2.getData());
+                    if(start == null){
+                        start = newNode;
+                        current = start;
+                    }else{
+                        current.setNext(newNode);
+                        current = newNode;
+                    }
+                    node2 = node2.getNext();
                 }
             }
         }
