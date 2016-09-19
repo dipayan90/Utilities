@@ -1,15 +1,14 @@
 package org.kajjoy.linkedlists;
 
 import org.kajjoy.linkedlists.cycleDetector.CycleDetectorRunner;
+import org.kajjoy.linkedlists.deleteDuplicates.DeleteDuplicatesRunner;
 import org.kajjoy.linkedlists.merge.MergeRunner;
 import org.kajjoy.linkedlists.queues.QueueRunner;
 import org.kajjoy.linkedlists.reorder.ReorderRunner;
 import org.kajjoy.linkedlists.stacks.StackRunner;
 import org.kajjoy.linkedlists.sum.SumRunner;
 
-/**
- * Created by dipayan on 9/14/16.
- */
+
 public class Application {
     public static void main(String[] args){
         System.out.println("Welcome to the LinkedList Application: \n");
@@ -18,7 +17,7 @@ public class Application {
             System.out.println(arg + "\t");
         }
 
-        runModules("mergeRunner").run();
+        runModules("detectAndRemoveDuplicates").run();
     }
 
 
@@ -47,6 +46,10 @@ public class Application {
             case "mergeRunner":{
                 System.out.println("Running the program to merge 2 sorted linkedlists");
                 return new MergeRunner();
+            }
+            case "detectAndRemoveDuplicates":{
+                System.out.println("Running the program to detect duplicates in a sorted linkedlist and removing them");
+                return new DeleteDuplicatesRunner();
             }
         }
         return () -> System.out.println("Please Specify a runner to run program");
