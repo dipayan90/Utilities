@@ -6,8 +6,9 @@ import org.kajjoy.linkedlists.core.Node;
 public class DeleteDuplicates {
 
     public static Node detectAndRemove(Node begin){
+        Node start = begin;
         while(begin.getNext() != null){
-            if(begin.getData() == begin.getNext().getData()){
+            while(begin.getData() == begin.getNext().getData()){
                 if(begin.getNext().getNext() != null){
                     begin.setNext(begin.getNext().getNext());
                 }else{
@@ -16,6 +17,6 @@ public class DeleteDuplicates {
             }
             begin = begin.getNext();
         }
-        return begin;
+        return start;
     }
 }
