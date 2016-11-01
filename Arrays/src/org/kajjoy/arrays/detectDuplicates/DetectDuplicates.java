@@ -1,5 +1,7 @@
 package org.kajjoy.arrays.detectDuplicates;
 
+import java.util.HashSet;
+
 public class DetectDuplicates {
 	
 	protected static boolean isDuplicate(String str){
@@ -29,6 +31,18 @@ public class DetectDuplicates {
 		
 		
 		return false;
+	}
+
+	protected static boolean isDuplicateUsingSet(String s){
+		HashSet<Character> set = new HashSet<>();
+		for(Character c: s.toCharArray()){
+			set.add(c);
+		}
+		if(set.size() == s.length()){
+			return false;
+		}else{
+			return true;
+		}
 	}
 
 }

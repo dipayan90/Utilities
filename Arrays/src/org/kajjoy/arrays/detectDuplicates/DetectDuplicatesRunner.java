@@ -12,7 +12,8 @@ public class DetectDuplicatesRunner implements Runner {
 		System.out.println("Please enter the method you want: \n");
 		System.out.println("1: Using space \n");
 		System.out.println("2: Without using space \n");
-		
+		System.out.println("3: Using set \n");
+
 		Scanner choiceInput = new Scanner(System.in);
 		int choice = choiceInput.nextInt();
 		
@@ -28,8 +29,14 @@ public class DetectDuplicatesRunner implements Runner {
 			}else{
 				System.out.println("false");
 			}
-		}else{
+		}else if(choice == 2){
 			if(DetectDuplicates.isDuplicateNoSpace(inputString)){
+				System.out.println("true");
+			}else{
+				System.out.println("false");
+			}
+		}else{
+			if(DetectDuplicates.isDuplicateUsingSet(inputString)){
 				System.out.println("true");
 			}else{
 				System.out.println("false");
