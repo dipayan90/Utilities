@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-class BTreePrinter {
+public class BTreePrinter {
 
     public static void printNode(Node root) {
         int maxLevel = BTreePrinter.maxLevel(root);
