@@ -15,10 +15,21 @@ public class BFS {
         if(root == null){
             return null;
         }else{
-            Node current = root;
-            Node previous = current;
+            toVisit.add(root);
             while(true){
-                return null;
+                Node current = toVisit.poll();
+                System.out.println("Node visited is: "+ current.getData());
+                alreadyVisited.add(current);
+                if(current.getData() == target){
+                    return current;
+                }else{
+                    if(current.getLeftChild() != null && !alreadyVisited.contains(current.getLeftChild())){
+                        toVisit.add(current.getLeftChild());
+                    }
+                    if(current.getRightChild() != null && !alreadyVisited.contains(current.getRightChild())){
+                        toVisit.add(current.getRightChild());
+                    }
+                }
             }
         }
 

@@ -1,6 +1,7 @@
 package org.kajjoy.trees.bfs;
 
 import org.kajjoy.trees.BTreePrinter;
+import org.kajjoy.trees.Node;
 import org.kajjoy.trees.Runner;
 import org.kajjoy.trees.operations.Tree;
 
@@ -26,6 +27,7 @@ public class BFSRunner implements Runner{
         System.out.println("Please enter the target");
         Scanner targetIn = new Scanner(System.in);
         int target = targetIn.nextInt();
-        BFS.find(tree.getRoot(),target);
+        Node result =  BFS.find(tree.getRoot(),target);
+        System.out.println("Node found and is: "+ result.getData());
     }
 }
